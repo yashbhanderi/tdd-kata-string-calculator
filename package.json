@@ -1,0 +1,24 @@
+{
+    "dependencies": {
+        "jest": "^29.0.2"
+    },
+    "name": "tdd-kata-string-calculator",
+    "version": "1.0.0",
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yashbhanderi/tdd-kata-string-calculator.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/yashbhanderi/tdd-kata-string-calculator/issues"
+    },
+    "homepage": "https://github.com/yashbhanderi/tdd-kata-string-calculator#readme",
+    "description": ""
+}
