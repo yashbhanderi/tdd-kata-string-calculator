@@ -47,3 +47,8 @@ test("Numbers bigger than 1000 should be ignored", () => {
     expect(sum("7000, 101, 553, 400, 5, 33333, 29293")).toBe(1059);
 });
 
+test("Allow new lines between numbers(instead of commas)", () => {
+    expect(sum("2")).toBe(2);
+    expect(sum("2\n7,8")).toBe(17);
+    expect(sum("97,98\n56,4,1\n20,45\n4")).toBe(325);
+});

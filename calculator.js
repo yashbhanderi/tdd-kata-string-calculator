@@ -2,26 +2,24 @@
 const getNumbers = (str) => {
     if (str === "") return [];
 
-    const pattern = ",";
-
     return str
-        .split(pattern)
+        .split(/(,|\n)/)   // comma or new line ignored
         .filter((n) => n !== "")
         .map((n) => {
-            if (/['a-z']/.exec(n)) return n.charCodeAt(0) - 96;
+            if (/['a-z']/.exec(n)) return n.charCodeAt(0) - 96;  // if n is an alphabet
             else return parseInt(n);
         });
 };
 
 // return sum of numbers in the array
 const calculateSum = (arr) => {
-    let sum = 0, negatives = [];
+    let sum = 0,
+        negatives = [];
 
     arr.forEach((num) => {
         if (num < 0) {
             negatives.push(num);
-        } 
-        else if(num <= 1000) sum += num;
+        } else if (num <= 1000) sum += num;
     });
 
     if (negatives.length > 0) {
