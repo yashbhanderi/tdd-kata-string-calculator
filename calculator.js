@@ -7,7 +7,10 @@ const getNumbers = (str) => {
     return str
         .split(pattern)
         .filter((n) => n !== "")
-        .map((n) => parseInt(n));
+        .map((n) => {
+            if (/['a-z']/.exec(n)) return n.charCodeAt(0) - 96;
+            else return parseInt(n);
+        });
 };
 
 // return sum of numbers in the array

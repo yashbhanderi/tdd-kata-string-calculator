@@ -15,3 +15,11 @@ test("Unknown amount of numbers string test", () => {
     expect(sum("2,7,3,1,6,8,43,2,3")).toBe(75);
     expect(sum("10,332,23,134,500,1,1,33,444")).toBe(1478);
 });
+
+test("Alphabets in string test", () => {
+    expect(sum("1,2,a,c")).toBe(7);
+    expect(sum("c,d,a,b")).toBe(10);
+    expect(sum("d")).toBe(4);
+    expect(sum("z,10,a,47")).toBe(84);
+    expect(sum("y")).toBe(25);
+});
