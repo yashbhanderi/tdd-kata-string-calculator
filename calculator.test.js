@@ -23,3 +23,12 @@ test("Alphabets in string test", () => {
     expect(sum("z,10,a,47")).toBe(84);
     expect(sum("y")).toBe(25);
 });
+
+test("Negatives not allowed (only one negative)", () => {
+    expect(() => {
+        sum("45,-45");
+    }).toThrow("Negatives not allowed : -45");
+    expect(() => {
+        sum("-1,5,6,7");
+    }).toThrow("Negatives not allowed : -1");
+});

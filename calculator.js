@@ -17,6 +17,9 @@ const getNumbers = (str) => {
 const calculateSum = (arr) => {
     let sum = 0;
     arr.forEach((num) => {
+        if (num < 0) {
+            throw new Error("Negatives not allowed : " + num);
+        }
         sum += num;
     });
     return sum;
