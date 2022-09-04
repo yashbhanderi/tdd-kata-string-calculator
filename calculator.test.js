@@ -41,3 +41,9 @@ test("Negatives not allowed (multiple negatives)", () => {
         sum("-67, -50, -16, -70, -80, -324, -102, -9");
     }).toThrow("Negatives not allowed : -67,-50,-16,-70,-80,-324,-102,-9");
 });
+
+test("Numbers bigger than 1000 should be ignored", () => {
+    expect(sum("1, 1001, 23, 3000, 25")).toBe(49);
+    expect(sum("7000, 101, 553, 400, 5, 33333, 29293")).toBe(1059);
+});
+
