@@ -32,3 +32,12 @@ test("Negatives not allowed (only one negative)", () => {
         sum("-1,5,6,7");
     }).toThrow("Negatives not allowed : -1");
 });
+
+test("Negatives not allowed (multiple negatives)", () => {
+    expect(() => {
+        sum("1, -3, 5, -9, -8, 22, -100");
+    }).toThrow("Negatives not allowed : -3,-9,-8,-100");
+    expect(() => {
+        sum("-67, -50, -16, -70, -80, -324, -102, -9");
+    }).toThrow("Negatives not allowed : -67,-50,-16,-70,-80,-324,-102,-9");
+});

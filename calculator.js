@@ -15,13 +15,18 @@ const getNumbers = (str) => {
 
 // return sum of numbers in the array
 const calculateSum = (arr) => {
-    let sum = 0;
+    let sum = 0,
+        negatives = [];
+
     arr.forEach((num) => {
         if (num < 0) {
-            throw new Error("Negatives not allowed : " + num);
-        }
-        sum += num;
+            negatives.push(num);
+        } 
+        else sum += num;
     });
+    if (negatives.length > 0) {
+        throw new Error("Negatives not allowed : " + negatives.join(","));
+    }
     return sum;
 };
 
