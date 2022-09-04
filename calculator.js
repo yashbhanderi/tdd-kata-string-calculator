@@ -9,8 +9,19 @@ const getNumbers = (str) => {
         str = str.substr(3);
     }
 
+    var regex = "\n|,";  // comma or new line ignored
+
+    if (str.indexOf("//") == 0) {
+        var s = str.substring(2, str.indexOf("\n"));
+        for (i = 0; i < s.length; i++) {
+            regex += "|" + s[i];    // add all delimiters in regex before \n
+        }
+    }
+
+    var pattern = new RegExp(regex, "g");
+
     return str
-        .split(/(\n|,)/) // comma or new line ignored
+        .split(pattern)
         .filter((n) => n !== "")
         .filter((n) => n !== ",")
         .map((n, i) => {
@@ -19,15 +30,15 @@ const getNumbers = (str) => {
                 if (odd || even) {
                     if (odd && (i + 1) % 2 != 0) return parseInt(n);
                     else if (even && (i + 1) % 2 == 0) return parseInt(n);
-                } else return parseInt(n);
+                } 
+                else return parseInt(n);
             }
         });
 };
 
 // return sum of numbers in the array
 const calculateSum = (arr) => {
-    let sum = 0,
-        negatives = [];
+    let sum = 0, negatives = [];
 
     arr.forEach((num) => {
         if (num < 0) {

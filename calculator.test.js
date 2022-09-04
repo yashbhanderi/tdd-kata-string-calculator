@@ -57,3 +57,8 @@ test("Sum of numbers at odd or even positions", () => {
     expect(sum("1//1, 101, 23, 300, 250")).toBe(401);
     expect(sum("0//700, 101, 553, 400, 5, 333, 293")).toBe(1551);
 });
+
+test("Multiple Delimiters", () => {
+    expect(sum("//[***]\n1***2***3")).toBe(6);
+    expect(sum("//[***][%%%%]\n1*2%3")).toBe(6);
+});
