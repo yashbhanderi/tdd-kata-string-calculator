@@ -1,6 +1,13 @@
 // return array of numbers
 const getNumbers = (str) => {
     if (str === "") return [];
+
+    const pattern = ",";
+
+    return str
+        .split(pattern)
+        .filter((n) => n !== "")
+        .map((n) => parseInt(n));
 };
 
 // return sum of numbers in the array
