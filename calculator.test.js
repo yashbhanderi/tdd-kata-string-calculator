@@ -52,3 +52,8 @@ test("Allow new lines between numbers(instead of commas)", () => {
     expect(sum("2\n7,8")).toBe(17);
     expect(sum("97,98\n56,4,1\n20,45\n4")).toBe(325);
 });
+
+test("Sum of numbers at odd or even positions", () => {
+    expect(sum("1//1, 101, 23, 300, 250")).toBe(401);
+    expect(sum("0//700, 101, 553, 400, 5, 333, 293")).toBe(1551);
+});
