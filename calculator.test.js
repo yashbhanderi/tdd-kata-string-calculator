@@ -62,3 +62,11 @@ test("Multiple Delimiters", () => {
     expect(sum("//[***]\n1***2***3")).toBe(6);
     expect(sum("//[***][%%%%]\n1*2%3")).toBe(6);
 });
+
+test("Start with asterick", () => {
+    expect(sum("*1,2,3")).toBe(6);
+    expect(sum("*1,2,a,3,b")).toBe(12);
+    expect(sum("*0//1,2,3")).toBe(3);
+    expect(sum("*1//1,2,3")).toBe(2);
+});
+
